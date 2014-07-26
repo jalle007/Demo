@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Calories": {
+            "applicationId": "eU0VtI9jfOT6mXxMtoZ7NwTk1NwEr0oa7RNEFDaY", 
+            "masterKey": "B1dIHNB2wsbpRgelbW5SuyyB6tGKKDZ8ezvfACze"
+        }, 
+        "_default": {
+            "link": "Calories"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.19"
+    }
+}
