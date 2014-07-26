@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <gradient
-        android:startColor="#58b246"
-        android:centerColor="#0b6134"
-        android:endColor="#58b246"
-        android:angle="90"/>
-</shape><!-- From: file:/C:/Users/Jalle/Dropbox/AndroidStudioProjects/test/jasmin-ibrisimbegovic/mycalories/app/src/main/res/drawable-mdpi/header_bg.xml -->
