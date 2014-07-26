@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:fillViewport="true">
+  <RelativeLayout 
+  		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content" android:background="#ffffff">
+  		
+  		<!--  Header  Starts-->
+  		<LinearLayout android:id="@+id/header"
+  				android:layout_width="fill_parent"
+  				android:layout_height="wrap_content"
+  				android:background="@drawable/header_bg"
+  				android:paddingTop="5dip"
+  				android:paddingBottom="5dip">
+  				<!-- Logo Start-->
+  				<ImageView android:src="@drawable/logo"
+  							android:layout_width="wrap_content"
+  							android:layout_height="wrap_content"
+  							android:layout_marginLeft="10dip"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:id="@+id/btnhide"
+                android:background="@drawable/filter" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgAdd"
+                android:background="@drawable/add"
+                android:layout_marginRight="10dip"
+                android:layout_gravity="right"
+                android:clickable="true" />
+  				<!-- Logo Ends -->
+  		</LinearLayout>
+  		<!--  Header Ends -->  
+  		<!-- Footer Start -->
+
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_below="@+id/header"
+          android:weightSum="1"
+          android:background="@color/yellow"
+          android:layout_alignBottom="@+id/footer">
+
+          <LinearLayout
+              android:orientation="horizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+
+
+          <TextView android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#7d010101"
+           android:id="@+id/txtUser"
+              android:paddingLeft="10dp"
+              android:textStyle="bold|italic"
+              android:textSize="16dp" />
+
+          <TextView
+              android:id="@+id/textview"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              />
+              <TextView android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#7d010101"
+                        android:id="@+id/txtFromTo"
+                        android:textSize="12dp"
+                        android:gravity="right"
+
+                        android:layout_gravity="right"
+                        android:paddingRight="10dp"/>
+
+          </LinearLayout>
+          <ListView
+              android:id="@+id/lv"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/yellow"
+              tools:listitem="@layout/meal_row"
+              android:clickable="true"
+              android:headerDividersEnabled="false" />
+
+          <!--filter layout -->
+      </LinearLayout>
+
+      <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/layFilter"
+              android:background="@drawable/myborder"
+              android:visibility="gone"
+          android:layout_above="@+id/footer">
+
+              <TextView
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:textColor="#372c24"
+                  android:text="Filter from"
+                  android:id="@+id/textView2"
+                  android:paddingLeft="10dp" />
+
+              <LinearLayout
+                  android:orientation="horizontal"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+              <EditText
+                  android:id="@+id/txtFromDate"
+                  android:layout_width="122dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="5dip"
+                  android:singleLine="true"
+                  android:layout_marginBottom="20dip"
+                  android:inputType="datetime"
+                  android:visibility="visible"
+                  android:hint="date" />
+              <View
+                  android:layout_width="0dp"
+                  android:layout_height="0dp"
+                  android:layout_weight="1"
+                  />
+              <Button
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+
+                  android:visibility="visible"
+                  android:id="@+id/btnFromDate"
+                  android:background="@android:drawable/ic_menu_my_calendar" />
+              <EditText
+                  android:id="@+id/txtFromTime"
+                  android:layout_width="100dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="5dip"
+                  android:singleLine="true"
+                  android:layout_marginBottom="20dip"
+                  android:inputType="datetime"
+                  android:visibility="visible"
+                  android:hint="time" />
+              <View
+                  android:layout_width="0dp"
+                  android:layout_height="0dp"
+                  android:layout_weight="1"
+                  />
+              <Button
+                  android:id="@+id/btnFromTime"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:visibility="visible"
+                  android:background="@android:drawable/ic_menu_recent_history" />
+              </LinearLayout>
+
+              <TextView
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:textColor="#372c24"
+                  android:text="To"
+                  android:id="@+id/textView"
+                  android:paddingLeft="10dp" />
+
+              <LinearLayout
+                  android:orientation="horizontal"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+                  <EditText
+                      android:id="@+id/txtToDate"
+                      android:layout_width="122dp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="5dip"
+                      android:singleLine="true"
+                      android:layout_marginBottom="20dip"
+                      android:inputType="datetime"
+                      android:visibility="visible"
+                      android:hint="date" />
+                  <View
+                      android:layout_width="0dp"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                      />
+                  <Button
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+
+                      android:visibility="visible"
+                      android:id="@+id/btnToDate"
+                      android:background="@android:drawable/ic_menu_my_calendar" />
+                  <EditText
+                      android:id="@+id/txtToTime"
+                      android:layout_width="100dp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="5dip"
+                      android:singleLine="true"
+                      android:layout_marginBottom="20dip"
+                      android:inputType="datetime"
+                      android:visibility="visible"
+                      android:hint="time" />
+                  <View
+                      android:layout_width="0dp"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                      />
+                  <Button
+                      android:id="@+id/btnToTime"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:visibility="visible"
+                      android:background="@android:drawable/ic_menu_recent_history" />
+              </LinearLayout>
+
+              <Button
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Filter meals"
+                  android:id="@+id/btnFilter" />
+          </LinearLayout>
+
+
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"/>
+
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_above="@+id/footer"
+          android:gravity="right"
+          android:weightSum="1">
+          <TextView
+              android:id="@+id/txtMax"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Max calories: "
+              android:textSize="20dp"
+              android:layout_alignParentLeft="true"
+              android:layout_alignParentStart="true"
+              android:layout_weight="1"
+              android:paddingLeft="10dp" />
+          <TextView
+              android:id="@+id/txt0"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Current: "
+              android:textSize="20dp"
+              android:layout_alignParentRight="true"
+              android:layout_alignParentEnd="true" />
+      <TextView
+          android:id="@+id/txtCalories"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="0"
+
+          android:textStyle="bold"
+          android:textSize="26dp"
+
+          android:layout_alignParentRight="true"
+          android:layout_alignParentEnd="true"
+          android:paddingRight="10dp"
+          android:textColor="@color/green" />
+      </LinearLayout>
+
+      <LinearLayout android:id="@+id/footer"
+  				android:layout_width="fill_parent"
+  				android:layout_height="40dip"
+  				android:background="@layout/footer_repeat"
+  				android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+
+            android:scaleType="fitXY"></LinearLayout>
+  		<!-- Footer Ends -->
+  		
+  		      <!-- Login Form Ends -->
+
+  </RelativeLayout>
+</ScrollView>
+<!-- From: file:/C:/Users/Jalle/Dropbox/AndroidStudioProjects/test/jasmin-ibrisimbegovic/mycalories/app/src/main/res/layout/meals.xml -->
