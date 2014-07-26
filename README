@@ -1,0 +1,37 @@
+MyCalories is a small client-server type of application built using latest version of Android Studio. It is based on Parse.com backend for storing data and also for providing REST API functions that makes this app scalable and robust.
+
+Usage
+
+1. First there is Register  screen where you  enter your details and  create account. 
+
+2. Then you have login screen. After 1st successful  login credentials are remembered so the user does not  have to enter that again. 
+
+3. In settings menu there is option to set Max Calories and Logout from the application.
+
+4. The following are options to adding meals, deleting, editing and filtering.
+
+
+There are 4 REST API functions located at Parse.com cloud code:
+
+//Create meal: parameters Meal object
+Parse.Cloud.define("create", function (request, response)
+
+/// Update meal: parameters Meal object
+Parse.Cloud.define("update", function (request, response)
+
+//  Select meals, parameters : userId , from , to dates
+Parse.Cloud.define("select", function (request, response)
+
+// Delete meal, parameters: objectId
+Parse.Cloud.define("delete", function (request, response)
+
+
+There are 2 compiled apk files.
+
+1.	mycalories.apk with use of REST API
+
+2.	mycalories_wo_api.apk with out REST API
+
+Source code is located here:
+http://git.toptal.com/Jasmin-Ibrisimbegovic/jasmin-ibrisimbegovic.git
+
