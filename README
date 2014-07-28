@@ -24,7 +24,7 @@ http://git.toptal.com/Jasmin-Ibrisimbegovic/jasmin-ibrisimbegovic.git
  
 There are 4 REST API functions located at Parse.com cloud code:
 
-//Create meal: parameters Meal object
+//Create meal /parameters Meal object
 
 Parse.Cloud.define("create", function (request, response) {
     var query = new Parse.Query("Meals");
