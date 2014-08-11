@@ -1,6 +1,8 @@
 package mycalories.com.jalle.mycalories;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.ListView;
+
 import com.robotium.solo.Solo;
 
 public class MealsActivityTest extends ActivityInstrumentationTestCase2<MealsActivity> {
@@ -27,9 +29,36 @@ public void tearDown() throws Exception {
 public void testAddMeal() throws Exception {
    //Unlock the lock screen
    solo.unlockScreen();
+   solo.assertCurrentActivity("Expected mealEditor activity", "MealsActivity");
+  // solo.clickOnMenuItem("Settings");
+
+   //add
+   solo.clickOnImage (1);
+   //new meal
+   solo.enterText(0, "meal 1");
+   //date
+  /* solo.clickOnButton(0);
+   solo.sendKey (solo.ENTER);
+   //time
+   solo.clickOnButton(1);
+   solo.sendKey (solo.ENTER);*/
+
+   //calories
+   solo.enterText(3, "100");
+   //save
+   solo.clickOnButton(3);
+   solo.goBack ();
+
+   solo.sleep(2000);
+   //get the list view
+   ListView myList = (ListView)solo.getView(R.id.lv);
+
+   assertNotNull("No list views!", myList);
+   assertTrue("No items in list view!", myList.getChildCount() > 0);
+
 /*   solo.clickOnMenuItem("Add meal");
    //Assert that mealEditor activity is opened
-   solo.assertCurrentActivity("Expected mealEditor activity", "mealEditor");
+
    //In text field 0, enter meal 1
    solo.enterText(0, "meal 1");
    solo.goBack();

@@ -1,50 +1,59 @@
 package mycalories.com.jalle.mycalories;
 
-/*
- * This is an example test project created in Eclipse to test NotePad which is a sample 
- * project located in AndroidSDK/samples/android-11/NotePad
- * 
- * 
- * You can run these test cases either on the emulator or on device. Right click
- * the test project and select Run As --> Run As Android JUnit Test
- * 
- * @author Renas Reda, renas.reda@robotium.com
- * 
- */
-
+import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.parse.ParseUser;
 import com.robotium.solo.Solo;
 
-
-
 public class LoginActivityTest extends ActivityInstrumentationTestCase2<LoginActivity> {
-
 private Solo solo;
 
 public LoginActivityTest() {
    super(LoginActivity.class);
-
-}
-
-@Override
-public void setUp() throws Exception {
-   //setUp() is run before a test case is started. 
-   //This is where the solo object is created.
-   solo = new Solo(getInstrumentation(), getActivity());
-}
-
-@Override
-public void tearDown() throws Exception {
-   //tearDown() is run after a test case has finished. 
-   //finishOpenedActivities() will finish all the activities that have been opened during the test execution.
-   solo.finishOpenedActivities();
 }
 
 public void testLogin() throws Exception {
 
-   //Unlock the lock screen
    solo.unlockScreen();
+   //logout
+   ParseUser.logOut ();
+   solo.sleep(2000);
+
+   solo.assertCurrentActivity("Expected Login activity", "LoginActivity");
+   // solo.clickOnMenuItem("Settings");
+   Activity currentActivity=solo.getCurrentActivity ();
+
+  // solo.goBack ();
+   //Sign in the user
+   //Email
+   solo.enterText(0, "jaskobh@hotmail.com");
+   //password
+   solo.enterText(1, "123");
+   //login
+  solo.clickOnButton(0);
+
+    solo.sleep(2000);
+   //get the list view
+    currentActivity=solo.getCurrentActivity ();
+
+
+   solo.assertCurrentActivity("Login unsucessful. Expected Meals activity", "MealsActivity");
+}
+
+@Override
+public void setUp() throws Exception {
+   //setUp() is run before a test case is started.
+   //This is where the solo object is created.
+   solo = new Solo(getInstrumentation(), getActivity());
 
 }
+
+@Override
+public void tearDown() throws Exception {
+   //tearDown() is run after a test case has finished.
+   //finishOpenedActivities() will finish all the activities that have been opened during the test execution.
+   solo.finishOpenedActivities();
+}
+
 }
