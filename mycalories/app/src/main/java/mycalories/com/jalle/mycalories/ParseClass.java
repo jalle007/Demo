@@ -15,8 +15,8 @@ import com.parse.ParseQuery;
  * Only init method is used here
  */
 public class ParseClass {
-public static final String APIKEY="eU0VtI9jfOT6mXxMtoZ7NwTk1NwEr0oa7RNEFDaY";
-public static final String TOKEN="owykCd2YQ0zwsiFeyVuffOsECb2Kuk9236yui9KU";
+public static final String APIKEY="xxx";
+public static final String TOKEN="xxx";
 
 // Initialize parse object
 public static void Init(Context ctx){
